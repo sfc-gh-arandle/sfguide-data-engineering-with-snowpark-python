@@ -49,6 +49,7 @@ def load_all_raw_tables(session):
             # We will load the 2022 data later in the lab
             if tname in ['order_header', 'order_detail']:
                 for year in ['2019', '2020', '2021']:
+                #for year in ['2021']:    
                     load_raw_table(session, tname=tname, s3dir=s3dir, year=year, schema=schema)
             else:
                 load_raw_table(session, tname=tname, s3dir=s3dir, schema=schema)
